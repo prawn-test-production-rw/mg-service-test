@@ -15,7 +15,7 @@ jobs:
 
       - name: Compute Impacted Targets (with startup options) (bazel-action)
         # trunk-ignore(semgrep/yaml.github-actions.security.third-party-action-not-pinned-to-commit-sha.third-party-action-not-pinned-to-commit-sha)
-        uses: trunk-io/bazel-action@main
+        uses: trunk-io/bazel-action@v1
         with:
           upload-targets: "true"
           test-targets: "false"
@@ -23,5 +23,3 @@ jobs:
           bazel-workspace-path: test_workspace
           verbose: 1
           bazel-startup-options: --host_jvm_args=-Xmx12G,--block_for_lock,--client_debug
-        env:
-          API_URL: https://api.trunk-staging.io:443/v1/setImpactedTargets
