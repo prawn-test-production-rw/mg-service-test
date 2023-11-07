@@ -15,11 +15,9 @@ jobs:
 
       - name: Compute Impacted Targets (non VERBOSE) (bazel-action)
         # trunk-ignore(semgrep/yaml.github-actions.security.third-party-action-not-pinned-to-commit-sha.third-party-action-not-pinned-to-commit-sha)
-        uses: trunk-io/bazel-action@main
+        uses: trunk-io/bazel-action@v1
         with:
           upload-targets: "true"
           test-targets: "false"
           trunk-token: ${{ secrets.TRUNK_REPO_API_TOKEN }}
           bazel-workspace-path: test_workspace
-        env:
-          API_URL: https://api.trunk-staging.io:443/v1/setImpactedTargets
